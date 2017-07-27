@@ -1,0 +1,4 @@
+<div *ngFor="let entry of journalEntryList | async ">
+  <p><a [routerLink]="['/',entry._id]">Title: {{entry.title}}</a></p>
+  <p>Date: {{entry.date}}</p>
+</div>

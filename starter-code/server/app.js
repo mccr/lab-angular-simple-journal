@@ -30,7 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
 const index = require('./routes/index');
+const journalEntries = require('./routes/api/journal-entries');
 app.use('/', index);
+app.use('/', journalEntries);
 
 app.all('/*', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
